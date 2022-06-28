@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PixelArtMaker/static/css/main.dfc5fd22.css",
+    "main.js": "/PixelArtMaker/static/js/main.966264a1.js",
+    "static/js/787.50b11cfd.chunk.js": "/PixelArtMaker/static/js/787.50b11cfd.chunk.js",
+    "index.html": "/PixelArtMaker/index.html",
+    "main.dfc5fd22.css.map": "/PixelArtMaker/static/css/main.dfc5fd22.css.map",
+    "main.966264a1.js.map": "/PixelArtMaker/static/js/main.966264a1.js.map",
+    "787.50b11cfd.chunk.js.map": "/PixelArtMaker/static/js/787.50b11cfd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfc5fd22.css",
+    "static/js/main.966264a1.js"
+  ]
+}
