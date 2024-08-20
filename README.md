@@ -1,3 +1,17 @@
+# Regarding this Project
+ This project's purpose is to generate sprites similar to tiles,platforms and even characters.Im trying to support this
+ project frequently you may suggest any changes and can clone this project.
+ Background and multiple layers are not supported as of now due to current project scope but will try to add in future
+ I hope it helps this is a 2 year old project so some dependencies might not be in the best condition do raise an issue and let me 
+ know.
+# Update 2.0
+I have added the support sketch picker
+The resposiveness has been added but its still being worked on due to how drawing panel generates the board
+the export options now generate the filename with generated_sprite according to user feedback
+Im trying to add an empty canvas layer if possible in future
+You can check the application out on my live server or clone it as below according to CRA.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
