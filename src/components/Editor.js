@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/editor.scss";
-import { CirclePicker } from "react-color";
+import { SketchPicker } from "react-color";
 import DrawingPanel from "./DrawingPanel";
 
 export default function Editor() {
@@ -12,12 +12,21 @@ export default function Editor() {
   const [selectedColor, setColor] = useState("#f44336");
 
   function initializeDrawingPanel() {
-    setHideOptions(!hideOptions);
-    setHideDrawingPanel(!hideDrawingPanel);
+    if (
+      panelWidth > 0 &&
+      panelWidth <= 32 &&
+      panelHeight > 0 &&
+      panelHeight <= 32
+    ) {
+      setHideOptions(!hideOptions);
+      setHideDrawingPanel(!hideDrawingPanel);
 
-    buttonText === "DRAW"
-      ? setButtonText("reset")
-      : setButtonText("DRAW");
+      buttonText === "DRAW"
+        ? setButtonText("RESET")
+        : setButtonText("DRAW");
+    } else {
+      alert("Please select dimensions between 1x1 and 32x32.");
+    }
   }
 
   function changeColor(color) {
@@ -27,17 +36,20 @@ export default function Editor() {
   return (
     <div id="editor">
       <h1>Pixel Art Maker</h1>
-      {hideDrawingPanel && <h2>Enter Canvas Dimensions</h2>}
+      <h2>Generate sprites for your project upto 32x32</h2>
+      {hideDrawingPanel && <h2>Enter Sprite Dimensions (e.g 8x8,16x16,32x32) </h2>}
       {hideDrawingPanel && (
         <div id="options">
           <div className="option">
             <input
               type="number"
               className="panelInput"
-              defaultValue={panelWidth}
+              value={panelWidth}
               onChange={(e) => {
-                setPanelWidth(e.target.value);
+                setPanelWidth(Number(e.target.value));
               }}
+              min="1"
+              max="32"
             />
             <span>Width</span>
           </div>
@@ -45,10 +57,12 @@ export default function Editor() {
             <input
               type="number"
               className="panelInput"
-              defaultValue={panelHeight}
+              value={panelHeight}
               onChange={(e) => {
-                setPanelHeight(e.target.value);
+                setPanelHeight(Number(e.target.value));
               }}
+              min="1"
+              max="32"
             />
             <span>Height</span>
           </div>
@@ -60,7 +74,10 @@ export default function Editor() {
       </button>
 
       {hideOptions && (
-        <CirclePicker color={selectedColor} onChangeComplete={changeColor} />
+        <div style={{ marginBottom: '20px' }}>
+          <h2>Select a Color</h2>
+          <SketchPicker color={selectedColor} onChangeComplete={changeColor} />
+        </div>
       )}
 
       {hideOptions && (

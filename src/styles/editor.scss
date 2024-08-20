@@ -1,48 +1,53 @@
 @import "properties.scss";
 
 #editor {
-
-  h1{
-   color:$yellow;
+  h1 {
+    color: $yellow;
   }
   border: 1px solid $red;
   border-radius: 0.25rem;
   padding: 1rem 4rem 2rem 4rem;
   margin-top: 2rem;
-
+  background: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 
   h1 {
     margin-bottom: 1.5rem;
+    font-size: 2rem;
   }
 
-  h2 {color:aqua;
+  h2 {
+    color: aqua;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   #options {
     display: flex;
     margin-bottom: 3rem;
     justify-content: center;
+    flex-wrap: wrap; // Allow options to wrap on smaller screens
 
     .option {
       display: flex;
       flex-direction: column;
+      margin-bottom: 1rem; // Add space between options
     }
 
     .panelInput {
-      height: 5rem;
-      width: 5rem;
-      font-size: 2rem;
+      height: 4rem;
+      width: 4rem;
+      font-size: 1.5rem;
       text-align: center;
       background-color: $black;
       color: $white;
       border: 1px solid $grey;
       border-radius: 0.25rem;
-      margin: 0 1rem 0.5rem 1rem;
-      padding-left: 1rem;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+      padding-left: 0.5rem;
 
       &:focus {
         outline: none !important;
@@ -72,5 +77,57 @@
 
   .circle-picker {
     margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #editor {
+    padding: 1.5rem 3rem 2rem 3rem; // Adjust padding for smaller screens
+    margin-top: 1.5rem;
+
+    h1 {
+      font-size: 1.75rem; // Adjust font size
+    }
+
+    h2 {
+      font-size: 1.25rem; // Adjust font size
+    }
+
+    #options .panelInput {
+      height: 3.5rem;
+      width: 3.5rem;
+      font-size: 1.25rem;
+    }
+
+    .button {
+      font-size: 1rem;
+      padding: 0.75rem 2rem; // Adjust padding
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #editor {
+    padding: 1rem 2rem 1.5rem 2rem;
+    margin-top: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    #options .panelInput {
+      height: 3rem;
+      width: 3rem;
+      font-size: 1rem;
+    }
+
+    .button {
+      font-size: 0.875rem;
+      padding: 0.5rem 1.5rem;
+    }
   }
 }

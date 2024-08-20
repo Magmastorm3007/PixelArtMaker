@@ -1,9 +1,45 @@
 #drawingPanel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; // Adding padding for small screens
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pixels {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  #drawingPanel {
+    padding: 2rem; // Increase padding on smaller screens
   }
-  
+
   #pixels {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; // Adjust margin for smaller screens
   }
+}
+
+@media (max-width: 480px) {
+  #drawingPanel {
+    padding: 1rem;
+  }
+
+  #pixels {
+    margin-bottom: 1rem; // Smaller margin for very small screens
+  }
+}
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: stretch;   /* Make buttons equal width */
+}
+
+.button {
+  flex: 1;                /* Allow buttons to grow equally */
+  margin: 5px 0;         /* Add some space between buttons */
+  padding: 10px;         /* Add padding for better appearance */
+  font-size: 16px;       /* Set font size */
+  cursor: pointer;        /* Change cursor on hover */
+}

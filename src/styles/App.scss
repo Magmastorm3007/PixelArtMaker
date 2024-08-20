@@ -8,7 +8,10 @@ html {
 }
 
 body {
-  background: $black;
+  background: linear-gradient(to right, #8b6e30, #9df08c); /* Light mint to pale yellow */
+
+
+
   color: $white;
   display: flex;
   justify-content: center;

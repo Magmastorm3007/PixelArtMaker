@@ -19,12 +19,14 @@ export default function DrawingPanel(props) {
       <div id="pixels" ref={panelRef}>
         {rows}
       </div>
-      <button onClick={() => exportComponentAsJPEG(panelRef)} className="button">
-      Export as JPEG
+      <div className='button-container'>
+      <button onClick={() => exportComponentAsJPEG(panelRef,{ fileName: 'generated_sprite'})} className="button">
+      Download/Export in jpg
       </button>
-      <button onClick={() => exportComponentAsPNG(panelRef)} className="button">
-      Export as PNG
+      <button onClick={() => exportComponentAsPNG(panelRef,{ fileName: 'generated_sprite'})} className="button">
+      Download/Export in png
       </button>
+      </div>
     </div>
   );
 }
